@@ -4,14 +4,8 @@
 **Supervisor:** Filatov Andrew
 
 ## Problem Statement
-Наша главная цель - расширить область применения диффузионных моделей в генерации высококачественных изображений. Мы проверяем гипотезу о том, что подходы в работах [PuLID](https://github.com/ToTheBeginning/PuLID), [InstantID](https://instantid.github.io/), [IP-Adapter](https://ip-adapter.github.io/) распространяются не только на аватары лиц, но и на ростовые. Мы достигаем этого изменением датасета и энкодера, принимающего на вход референсную картинку пользователя.
-Отдельной частью эксперимента является попытка подобрать лучший метод для выделения тела человека (BodyID) с картинки. 
+Our main goal is to expand the scope of diffusion models in generating high-quality images. We test the hypothesis that the approaches in [PuLID](https://github.com/ToTheBeginning/PuLID), [InstantID](https://instantid.github.io/), and [IP-Adapter] (https://ip-adapter.github.io/) apply not only to facial avatars, but also to full-body avatars. We achieve this by modifying the dataset and the encoder that takes the user's reference image as input.
+A separate part of the experiment is an attempt to find the best method for extracting the human body (BodyID) from an image. 
 
 ## Train baseline model
-Для этого установите все зависимости из [IP-Adapter](https://ip-adapter.github.io/), замените `tutorial_train_plus.py` на соответствующий ему файл `./model_train/tutorial_train_plus.py`. Запуск скрипта осуществляется выполнением скрипта `train.sh`, который предварительно надо перенести в директорию `IP-Adapter`. 
-
-Результаты тренировки модели можно найти в ноутбуке 
-
-
-## Citation
-TODO
+To do this, install all dependencies from [IP-Adapter](https://ip-adapter.github.io/), replace `tutorial_train_plus.py` with the corresponding file `./model_train/tutorial_train_plus.py`. The script is run by executing the `train.sh` script, which must first be moved to the `IP-Adapter` directory.
