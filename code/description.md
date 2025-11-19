@@ -1,5 +1,5 @@
-## Структура датасета
-Датасет, на котором я запускал обучение, имеет следующую структуру
+## Dataset structure
+The dataset on which I started the training has the following structure
 ```
 2025_ipAdap_image
 |
@@ -15,31 +15,27 @@
 |____next_personM.jpg
 |__ ....
 ```
-
-## Запуск моделей
-Поскольку код использует библиотеку [Accelerate](https://huggingface.co/docs/accelerate/index), не забудьте настроить конфиг вашего окружения.
+## Launching models
+Because the code uses the [Accelerate](https://huggingface.co/docs/accelerate/index) library, do not forget to configure the configuration of your environment.
 ```bash
 accelerate config
 ```
 
 ### IP-Adapter. Baseline
-Следующий код позволит запустить генерацию изображений с помощью стандартного IP-Adapter. Запуск осуществляется командой
+The following code will allow you to start image generation using a standard IP Adapter. The launch is performed by the command
 ```bash
 bash script.sh
 ```
-или
+or
 ```bash
 python script.py --data_dir "/data/kazachkovda/2025_ipAdap_image/" --output_dir "../../figures" --json "../../data_preprocess/metadata.jsonl" --num_images 4
 ```
-Перед этим вам необходимо установить все зависимости проекта и настроить пути к папке с данными. Описание структуры датасета можете найти в этом файле выше.
+Before doing so, you need to install all project dependencies and configure paths to the data folder. A description of the dataset structure can be found in this file above.
 
 ### IP-Adapter with Self-Attention
-Следующий код позволит запустить генерацию изображений с помощью модифицированного IP-Adapter. Изменение заключается в том, что вместе с фотографией человека подается множество его фотографий с разных ракурсов. Эти ракурсы обрабатываются с помощью self-attention. Более подробно вы можете почитать в самой [работе](https://github.com/wolkendolf/2025-project-DiffModels/blob/main/docs/2025genavatars_main.pdf).
+The following code will start generating images using a modified IP-Adapter. The change is that, along with a photo of a person, many photos of them from different angles are submitted. These angles are processed using self-attention. You can read more details in the [paper](https://github.com/wolkendolf/2025-project-DiffModels/blob/main/docs/2025genavatars_main.pdf) itself.
 
-Флаг `images_number` означает количество ракурсов. Его вы можете установить как минимальное количество ракурсов среди имеющихся фотографий людей.
+The `images_number` flag indicates the number of camera angles. You can set it as the minimum number of camera angles among the available photos of people.
 ```bash
 bash train_script.sh
 ```
-
-### IP-Adapter with Latent Representaion
-Следующий код позволит запустить генерацию изображений с помощью модифицированного IP-Adapter.
