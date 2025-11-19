@@ -9,3 +9,6 @@ A separate part of the experiment is an attempt to find the best method for extr
 
 ## Train baseline model
 To do this, install all dependencies from [IP-Adapter](https://ip-adapter.github.io/), replace `tutorial_train_plus.py` with the corresponding file `./model_train/tutorial_train_plus.py`. The script is run by executing the `train.sh` script, which must first be moved to the `IP-Adapter` directory.
+
+You can find a detailed description in the [file \[eng\]](https://github.com/wolkendolf/BoLID_Body_Lightning_ID_Diffusion/blob/main/docs/2025genavatars_main_eng.pdf) or in the [file \[rus\]](https://github.com/wolkendolf/BoLID_Body_Lightning_ID_Diffusion/blob/main/docs/2025genavatars_main_rus.pdf).
+
