@@ -1,20 +1,20 @@
 # Data processing
 
-Порядок запуска:
-1. check_watermarks.py (дополнительно удалим повержденные файлы)
+Launch order:
+1. check_watermarks.py (additionally, we will delete the verified files)
 2. check_number_faces.py
-3. (optional) check_count_imgs.py (можно поставить требование минимального количества изображений в папке. Все папки ниже данного порога будут удалены)
+3. (optional) check_count_imgs.py (You can set a minimum number of images in a folder. All folders below this threshold will be deleted.)
 4. generate_metadata_gpuVersion.py
 
 ## Check watermarks
 
 ### Desription
-Решение основывается на проекте [watermark-detection](https://github.com/boomb0om/watermark-detection), откуда необходимо установить зависимости.
+The solution is based on the [watermark-detection](https://github.com/boomb0om/watermark-detection) project, from which dependencies must be installed.
 
-Код способен обрабатывать битые изображения.
+The code is capable of processing broken images.
 
 ### Run
-После клонирования репозитория [watermark-detection](https://github.com/boomb0om/watermark-detection), необходимо прописать в `data/check_watermarks.py` путь к модели:
+After cloning the repository [watermark-detection](https://github.com/boomb0om/watermark-detection), it is necessary to register in `data/check_watermarks.py ` the path to the model:
 
 ```python
 sys.path.append(
@@ -22,7 +22,7 @@ sys.path.append(
 )
 ```
 
-Также не забудьте указать путь к датасету и устройство.
+Also, do not forget to specify the path to the dataset and the device.
 ```python
 BASE_DATASET_PATH = (
     "/path/to/dataset"
@@ -30,7 +30,7 @@ BASE_DATASET_PATH = (
 device = 'cuda:0'
 ```
 
-Запуск обработчика
+Launching the handler
 ```bash
 cd data
 python check_watermarks.py
@@ -40,15 +40,15 @@ python check_watermarks.py
 ## Face validation
 
 ### Description
-Проверка фотографий на наличие лишь одного лица на изображении. Основывывается на модели `YOLOv11n-face-detection`.
+Checking photos for only one face in the image. It is based on the `YOLOv11n-face-detection` model.
 
 ### Run
-Не забудьте указать путь к датасету:
+Don't forget to specify the path to the dataset:
 ```python
 BASE_DATASET_PATH = "/path/to/dataset"
 ```
 
-После установки необходимых зависимостей:
+After installing the necessary dependencies:
 ```bash
 cd data 
 python check_number_faces.py
@@ -58,10 +58,10 @@ python check_number_faces.py
 ## Desriptive generation
 
 ### Description
-В основе лежит модель `Qwen2.5-VL-7B-Instruct`.
+It is based on the `Qwen2.5-VL-7B-Instruct` model.
 
 ### Run
-После установки необходимых зависимостей:
+After installing the necessary dependencies:
 
 ```bash
 cd data 
