@@ -5,7 +5,7 @@ This solution made for `theplace.ru` website, which collects high-resolution pho
 This version doesn't unsupported CLI, you need to change the startup parameters inside `parser.py`.
 
 Parameters list:
-- start_url: начальный URL (например, https://www.theplace.ru/photos/)
+- start_url: начальный URL (for example, https://www.theplace.ru/photos/)
 - min_images (int): requirement to have at least *min_images* photos on the page;
 - max_images: will be downloaded max_images for every person;
 - max_persons (int): will be made a collection of photos for *max_persons* persons;
